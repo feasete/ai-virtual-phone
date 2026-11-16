@@ -33,6 +33,16 @@ const nextConfig = {
     // 跳过 typecheck 让 build 通过；IDE 和 `npx tsc --noEmit` 仍能看到错误。
     ignoreBuildErrors: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http', // 如果你报错的链接是 https 开头的，这里请改成 'https'
+        hostname: '897789.xyz', // ⚠️ 替换成报错信息里真实的域名，比如 'example.xyz'
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
   outputFileTracingIncludes: {
     "/api/**": ["./data/**"],
   },
